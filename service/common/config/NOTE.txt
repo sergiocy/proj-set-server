@@ -1,5 +1,0 @@
-
-Aqui podrían venir funcionalidades para gestion de config:
-
-- definición de un template
-- gestion del template

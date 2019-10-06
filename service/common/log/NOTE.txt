@@ -1,6 +1,0 @@
-
-como en la ../config, para gestion de configs, aqui podriamos definir funcionalidades especificas para gestion de logs:
-
-- creacion
-- definir un standar/formato de escritura de las lineas de logs
-
