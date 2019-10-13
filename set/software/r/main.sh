@@ -36,6 +36,31 @@ echo "`date '+%Y-%m-%d %H:%M:%S'` - INFO - PATH CONFIG: $PATH_CONFIG" >> $PATH_F
 
 
 ###################################################
+#### INSTALLING
+#### 1.- put repository in sources.list file
+sudo echo "deb http://cran.rstudio.com/bin/linux/ubuntu xenial/" | sudo tee -a /etc/apt/sources.list
+
+#### 2.- put in ubuntu keyring
+gpg --keyserver keyserver.ubuntu.com --recv-key E084DAB9
+gpg -a --export E084DAB9 | sudo apt-key add -
+
+#### 3.- install R-base
+sudo apt-get update
+sudo apt-get install r-base r-base-dev
+
+#### 4.- install RStudio-Server
+#### ...needed package...
+sudo apt-get install gdebi-core
+#### ...download...
+wget https://download2.rstudio.org/rstudio-server-1.1.414-amd64.deb
+#### ...install...
+sudo gdebi rstudio-server-1.1.414-amd64.deb
+#### ...we can remove the .deb package...
+#rm rstudio-server-1.1.414-amd64.deb
+
+
+
+###################################################
 DURATION=$SECONDS
 echo "`date '+%Y-%m-%d %H:%M:%S'` - INFO - END R INSTALLATION" >> $PATH_FILE_LOG
 echo "`date '+%Y-%m-%d %H:%M:%S'` - INFO - FINISH R INSTALLATION IN $(($DURATION / 60)) minutes and $(($DURATION % 60)) seconds" >> $PATH_FILE_LOG
