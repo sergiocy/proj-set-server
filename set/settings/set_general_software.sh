@@ -34,8 +34,10 @@ PATH_LOG=$PATH_PROJECT_ROOT/log
 #source $PATH_PROJECT_ROOT/service/controller_set_software.sh
 #source $PATH_PROJECT_ROOT/service/controller_validations.sh
 
-#### htop
+#### INSTALL SOFTWARE
 # sudo apt-get install htop
+# sudo apt-get install gparted
+
 
 
 
