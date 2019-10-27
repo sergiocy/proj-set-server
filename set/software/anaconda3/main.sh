@@ -56,6 +56,10 @@ echo `sha256sum $anaconda_installer`
 bash $anaconda_installer
 #### ...accept licence and define installation folder...
 
+#### 5. add anaconda path in $PATH variable
+# - we can append anaconda ./bin folder in PATH editing /etc/environment
+# - we can put export in .bashrc
+
 
 
 ###################################################
