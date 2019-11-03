@@ -1,0 +1,18 @@
+
+#### CONFIG FILE TO HADOOP INSTALLATION AND SETTINGS
+
+hadoop_path_download=https://www.apache.org/dist/hadoop/core/hadoop-2.8.5/
+hadoop_targz_download=hadoop-2.8.5.tar.gz
+folder_local_installation=/opt/hadoop
+
+#### to write core-site.xml
+server_hdfs_host=
+server_hdfs_port=
+
+#### to write hdfs-site.xml
+HDFS_DATA_REPLICATION=1
+HDFS_DATA_NAMENODE=/var/data/hdfs/namenode
+HDFS_DATA_DATANODE=/var/data/hdfs/datanode
+
+#### to write hadoop-env.sh
+HADOOP_SSH_PORT=
