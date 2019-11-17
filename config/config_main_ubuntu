@@ -1,3 +1,7 @@
 
 #### CONFIG FILE TO GENERAL SETTINGS
 
+[LOCAL_FOLDER]
+DOWNLOAD=./download
+LOG=./log
+

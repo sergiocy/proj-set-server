@@ -60,6 +60,9 @@ bash $anaconda_installer
 # - we can append anaconda ./bin folder in PATH editing /etc/environment
 # - we can put export in .bashrc
 
+#### OPTIONAL - 6.- to define environment creation in /opt/anaconda3/envs (suppose this /opt/anaconda3 is CONDA_ROOT) we must write the next environment path in /etc/environment
+# CONDA_ENVS_PATH=/opt/anaconda/envs
+
 
 
 ###################################################

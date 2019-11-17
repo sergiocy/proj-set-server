@@ -1,0 +1,6 @@
+
+#### CONFIG FILE TO DESKTOP UTILS INSTALLATION 
+
+[GOOGLE_CHROME]
+repo_google_chrome=https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+deb_pkg_google_chrome=google-chrome-stable_current_amd64.deb
