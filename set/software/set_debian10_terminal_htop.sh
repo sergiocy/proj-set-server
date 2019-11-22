@@ -17,6 +17,8 @@ apt-get install htop
 
 apt-get install git
 
+apt-get install gawk
+
 
 
 ###################################################
