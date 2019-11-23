@@ -11,31 +11,32 @@ CURRENT_TIMESTAMP=`date '+%Y-%m-%d %H:%M:%S'`
 ####
 #### PROJECT AND INSTALLATION FOLDERS
 PATH_PROJECT_ROOT=$(pwd)
-PATH_CONFIG=$PATH_PROJECT_ROOT/config/config_debian10_main.conf
-
-
+PATH_PROJECT_CONFIG==$PATH_PROJECT_ROOT/config
 PATH_PROJECT_LOG=$PATH_PROJECT_ROOT/log
-
+PATH_CONFIG_MAIN=$PATH_PROJECT_CONFIG/config_debian10_main.conf
+#### read config in ./config/config_debian10_main.conf
+PATH_PROJECT_DOWNLOAD=$(awk '/^LOCAL_FOLDER_DOWNLOAD/{print $0}' "${PATH_CONFIG}" | sed 's/LOCAL_FOLDER_DOWNLOAD=//') 
 
 echo $PATH_PROJECT_ROOT
+echo $PATH_PROJECT_CONFIG
+echo $PATH_CONFIG_MAIN
 echo $PATH_PROJECT_LOG
-echo $PATH_CONFIG
+echo $PATH_PROJECT_DOWNLOAD
 
-#### TODO: read/parse main_config with execution default variables (paths...)
-echo " ------------------- "
-
-
-local_folder_download=$(awk '/^LOCAL_FOLDER_DOWNLOAD/{print $0}' "${PATH_CONFIG}") #| awk -F. '{print $1}'
-echo $local_folder_download
-
-#local_folder_log=$(awk '/^LOCAL_FOLDER_LOG/{print $0}' "${PATH_CONFIG}")
-
-
-echo $local_folder_download
-echo $(pwd)/$local_folder_download
 
 #### TODO: parse args
 # --software=name_app ()
+
+####
+#### VALIDATE EXISTS INPUT ARGUMENTS
+if [ $# == 0 ]
+then
+	echo 'WARNING!!! you must use input arguments'
+	echo 'you could use -h or --help argument to know the process'
+	exit 1
+else
+	echo "in else"
+fi
 
 
 
