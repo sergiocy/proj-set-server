@@ -19,10 +19,13 @@ apt-get install git
 
 apt-get install gawk
 
+####...this package has the "add-apt-repository" command
+sudo apt-get install software-properties-common
+
+
 
 
 ###################################################
 DURATION=$SECONDS
 echo "`date '+%Y-%m-%d %H:%M:%S'` - INFO - END R INSTALLATION" >> $PATH_FILE_LOG
 echo "`date '+%Y-%m-%d %H:%M:%S'` - INFO - FINISH R INSTALLATION IN $(($DURATION / 60)) minutes and $(($DURATION % 60)) seconds" >> $PATH_FILE_LOG
-
