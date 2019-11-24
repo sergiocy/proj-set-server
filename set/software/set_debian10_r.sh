@@ -51,7 +51,9 @@ sudo apt install r-base
 #### 2.- install rstudio
 #sudo apt -y install wget
 #### ... this version not download... wget https://download1.rstudio.org/desktop/bionic/amd64/rstudio-1.2.1578-amd64.deb
-wget https://download2.rstudio.org/rstudio-server-1.1.414-amd64.deb
+#wget https://download2.rstudio.org/rstudio-server-1.1.414-amd64.deb
+wget https://download1.rstudio.org/desktop/bionic/amd64/rstudio-1.2.5019-amd64.deb
+
 sudo dpkg -i rstudio-1.2.1578-amd64.deb
 
 
