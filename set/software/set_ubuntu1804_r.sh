@@ -28,45 +28,35 @@ echo "`date '+%Y-%m-%d %H:%M:%S'` - INFO - PATH CONFIG: $PATH_CONFIG" >> $PATH_F
 
 ###################################################
 #### LOADING RESOURCES
-#source $PATH_PROJECT_ROOT/service/functions_util.sh
-#source $PATH_PROJECT_ROOT/service/controller_help.sh
+#source $PATH_PROJECT_ROOT/service/functions_util.sh 
+#source $PATH_PROJECT_ROOT/service/controller_help.sh 
 #source $PATH_PROJECT_ROOT/service/controller_set_software.sh
 #source $PATH_PROJECT_ROOT/service/controller_validations.sh
 
 
 
 ###################################################
-#### INSTALLING --- WARNING!!!! ...we have in troubles
-#### 1.- add GPG key
-#sudo apt-key adv --keyserver keys.gnupg.net --recv-key 'E19F5F87128899B192B1A2C2AD5F960A256A04AF'
-#### 2.- add repository (debian 10 , "buster", branch)
-#sudo add-apt-repository 'deb http://cloud.r-project.org/bin/linux/debian buster-cran35/'
+#### INSTALLING
+#### 1.- put repository in sources.list file
+sudo echo "deb http://cran.rstudio.com/bin/linux/ubuntu xenial/" | sudo tee -a /etc/apt/sources.list
 
-################# ...another resource...
-#### 1.- install R (in debian repo or not????)... updating firstly...
-#sudo apt update
-#sudo apt -y upgrade
-sudo apt install r-base
+#### 2.- put in ubuntu keyring
+gpg --keyserver keyserver.ubuntu.com --recv-key E084DAB9
+gpg -a --export E084DAB9 | sudo apt-key add -
 
-#### 2.- install rstudio
-#sudo apt -y install wget
-#### ... this version not download... wget https://download1.rstudio.org/desktop/bionic/amd64/rstudio-1.2.1578-amd64.deb
-#wget https://download2.rstudio.org/rstudio-server-1.1.414-amd64.deb
+#### 3.- install R-base
+sudo apt-get update
+sudo apt-get install r-base r-base-dev
 
-
-#### RStudio desktop
-wget https://download1.rstudio.org/desktop/bionic/amd64/rstudio-1.2.5019-amd64.deb
-sudo dpkg -i rstudio-1.2.1578-amd64.deb
-#### if we encounter dependencies ERRORs ...
-# sudo apt -f install
-
-
-#### RStudio server
+#### 4.- install RStudio-Server
+#### ...needed package...
 sudo apt-get install gdebi-core
-wget https://download2.rstudio.org/server/bionic/amd64/rstudio-server-1.2.5019-amd64.deb
-sudo gdebi rstudio-server-1.2.5019-amd64.deb
-
-
+#### ...download...
+wget https://download2.rstudio.org/rstudio-server-1.1.414-amd64.deb
+#### ...install...
+sudo gdebi rstudio-server-1.1.414-amd64.deb
+#### ...we can remove the .deb package...
+#rm rstudio-server-1.1.414-amd64.deb
 
 
 
@@ -74,3 +64,4 @@ sudo gdebi rstudio-server-1.2.5019-amd64.deb
 DURATION=$SECONDS
 echo "`date '+%Y-%m-%d %H:%M:%S'` - INFO - END R INSTALLATION" >> $PATH_FILE_LOG
 echo "`date '+%Y-%m-%d %H:%M:%S'` - INFO - FINISH R INSTALLATION IN $(($DURATION / 60)) minutes and $(($DURATION % 60)) seconds" >> $PATH_FILE_LOG
+
