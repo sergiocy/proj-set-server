@@ -19,6 +19,8 @@ apt-get install git
 
 apt-get install gawk
 
+apt install curl
+
 ####...this package has the "add-apt-repository" command
 sudo apt-get install software-properties-common
 

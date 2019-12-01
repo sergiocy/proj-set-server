@@ -29,8 +29,8 @@ echo "`date '+%Y-%m-%d %H:%M:%S'` - INFO - PATH CONFIG: $PATH_CONFIG" >> $PATH_F
 
 ###################################################
 #### LOADING RESOURCES
-#source $PATH_PROJECT_ROOT/service/functions_util.sh 
-#source $PATH_PROJECT_ROOT/service/controller_help.sh 
+#source $PATH_PROJECT_ROOT/service/functions_util.sh
+#source $PATH_PROJECT_ROOT/service/controller_help.sh
 #source $PATH_PROJECT_ROOT/service/controller_set_software.sh
 #source $PATH_PROJECT_ROOT/service/controller_validations.sh
 
@@ -53,12 +53,14 @@ echo `curl -O $anaconda_sh`
 echo `sha256sum $anaconda_installer`
 
 #### 4.- execute bash
-bash $anaconda_installer
+sudo bash $anaconda_installer
 #### ...accept licence and define installation folder...
 
 #### 5. add anaconda path in $PATH variable
 # - we can append anaconda ./bin folder in PATH editing /etc/environment
 # - we can put export in .bashrc
+# - conda init .... to initialize anaconda
+# - conda config --set auto_activate_base false ...to not activate base environment by default when start a terminal
 
 #### OPTIONAL - 6.- to define environment creation in /opt/anaconda3/envs (suppose this /opt/anaconda3 is CONDA_ROOT) we must write the next environment path in /etc/environment
 # CONDA_ENVS_PATH=/opt/anaconda/envs
@@ -69,4 +71,3 @@ bash $anaconda_installer
 DURATION=$SECONDS
 echo "`date '+%Y-%m-%d %H:%M:%S'` - INFO - END anaconda3 INSTALLATION" >> $PATH_FILE_LOG
 echo "`date '+%Y-%m-%d %H:%M:%S'` - INFO - FINISH anaconda3 INSTALLATION IN $(($DURATION / 60)) minutes and $(($DURATION % 60)) seconds" >> $PATH_FILE_LOG
-
