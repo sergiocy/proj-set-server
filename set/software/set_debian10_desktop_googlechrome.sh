@@ -39,7 +39,7 @@ echo "`date '+%Y-%m-%d %H:%M:%S'` - INFO - PATH CONFIG: $PATH_CONFIG" >> $PATH_F
 ###################################################
 #### INSTALLING desktop utils
 
-####
+############################
 #### 1.- google chrome
 repo_google_chrome="https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb"
 deb_pkg_google_chrome="google-chrome-stable_current_amd64.deb"
@@ -49,7 +49,8 @@ apt install ./$deb_pkg_google_chrome
 #rm ./$deb_pkg_google_chrome
 
 
-####
+
+###########################
 #### 2.- sublime
 repo_sublime="https://download.sublimetext.com/sublimehq-pub.gpg"
 
@@ -62,7 +63,8 @@ sudo apt install apt-transport-https
 sudo apt install sublime-text
 
 
-####
+
+###############################
 #### NOTE: problems in atom installation..    
 #### sudo apt --fix-broken install ..... solve the dependencies problem
 #### 3.- atom
@@ -74,6 +76,15 @@ deb_pkg_atom="atom.deb"
 #sudo dpkg -i $deb_pkg_atom
 
 #wget -qO - $repo_atom | sudo apt-key add 
+
+
+
+###############################
+#### 4.- latex and texmaker
+sudo apt-get install texlive-base # ...o .... texlive-full ...to a complete version (aprox 3Gb)
+sudo apt-get install texmaker # ...to get texmaker editor...
+
+
 
 
 ###################################################
