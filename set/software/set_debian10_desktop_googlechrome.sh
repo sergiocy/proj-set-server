@@ -29,8 +29,8 @@ echo "`date '+%Y-%m-%d %H:%M:%S'` - INFO - PATH CONFIG: $PATH_CONFIG" >> $PATH_F
 
 ###################################################
 #### LOADING RESOURCES
-#source $PATH_PROJECT_ROOT/service/functions_util.sh 
-#source $PATH_PROJECT_ROOT/service/controller_help.sh 
+#source $PATH_PROJECT_ROOT/service/functions_util.sh
+#source $PATH_PROJECT_ROOT/service/controller_help.sh
 #source $PATH_PROJECT_ROOT/service/controller_set_software.sh
 #source $PATH_PROJECT_ROOT/service/controller_validations.sh
 
@@ -65,7 +65,7 @@ sudo apt install sublime-text
 
 
 ###############################
-#### NOTE: problems in atom installation..    
+#### NOTE: problems in atom installation..
 #### sudo apt --fix-broken install ..... solve the dependencies problem
 #### 3.- atom
 #repo_atom="https://atom.io/download/deb"
@@ -75,7 +75,7 @@ deb_pkg_atom="atom.deb"
 #wget $repo_atom -O $deb_pkg_atom
 #sudo dpkg -i $deb_pkg_atom
 
-#wget -qO - $repo_atom | sudo apt-key add 
+#wget -qO - $repo_atom | sudo apt-key add
 
 
 
@@ -87,8 +87,8 @@ sudo apt-get install texmaker # ...to get texmaker editor...
 
 
 
+
 ###################################################
 DURATION=$SECONDS
 echo "`date '+%Y-%m-%d %H:%M:%S'` - INFO - END R INSTALLATION" >> $PATH_FILE_LOG
 echo "`date '+%Y-%m-%d %H:%M:%S'` - INFO - FINISH R INSTALLATION IN $(($DURATION / 60)) minutes and $(($DURATION % 60)) seconds" >> $PATH_FILE_LOG
-

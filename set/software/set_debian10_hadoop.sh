@@ -28,8 +28,8 @@ echo "`date '+%Y-%m-%d %H:%M:%S'` - INFO - PATH CONFIG: $PATH_CONFIG" >> $PATH_F
 
 ###################################################
 #### LOADING RESOURCES
-#source $PATH_PROJECT_ROOT/service/functions_util.sh 
-#source $PATH_PROJECT_ROOT/service/controller_help.sh 
+#source $PATH_PROJECT_ROOT/service/functions_util.sh
+#source $PATH_PROJECT_ROOT/service/controller_help.sh
 #source $PATH_PROJECT_ROOT/service/controller_set_software.sh
 #source $PATH_PROJECT_ROOT/service/controller_validations.sh
 
@@ -39,8 +39,9 @@ echo "`date '+%Y-%m-%d %H:%M:%S'` - INFO - PATH CONFIG: $PATH_CONFIG" >> $PATH_F
 #### INSTALLING
 
 # 1.- TODO ....variables to get from config...
-hadoop_path_download=https://www.apache.org/dist/hadoop/core/hadoop-2.8.5/
-hadoop_targz_download=hadoop-2.8.5.tar.gz
+#hadoop_path_download=https://www.apache.org/dist/hadoop/core/hadoop-2.8.5/
+hadoop_path_download=http://apache.rediris.es/hadoop/common/hadoop-3.2.1/
+hadoop_targz_download=hadoop-3.2.1.tar.gz
 folder_local_installation=/opt/hadoop
 
 hadoop_repo_download=$hadoop_path_download$hadoop_targz_download
@@ -61,7 +62,7 @@ wget $hadoop_repo_download
 #echo `sha256sum $hadoop_repo_download`
 # ...or shasum -a 512 hadoop_file_tar.gz
 
-tar -zxvf hadoop-2.8.5.tar.gz -C $folder_local_installation
+tar -zxvf $hadoop_targz_download -C $folder_local_installation
 
 #### ...in this way we must an installation in /opt/hadoop/hadoop-2.8.5/*.... we must pùt the content in /opt/hadoop .... to friendly...
 
@@ -101,4 +102,3 @@ tar -zxvf hadoop-2.8.5.tar.gz -C $folder_local_installation
 DURATION=$SECONDS
 echo "`date '+%Y-%m-%d %H:%M:%S'` - INFO - END INSTALLATION" >> $PATH_FILE_LOG
 echo "`date '+%Y-%m-%d %H:%M:%S'` - INFO - FINISH INSTALLATION IN $(($DURATION / 60)) minutes and $(($DURATION % 60)) seconds" >> $PATH_FILE_LOG
-
