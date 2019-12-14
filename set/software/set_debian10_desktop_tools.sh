@@ -86,6 +86,15 @@ sudo apt-get install texmaker # ...to get texmaker editor...
 
 
 
+##############################
+#### 5.- vivaldi navigator
+#URL=https://downloads.vivaldi.com/stable
+#wget -q ${URL}/vivaldi-stable_1.11.917.39-1_amd64.deb
+#sudo dpkg -i vivaldi-stable_1.11.917.39-1_amd64.deb || \
+#  (sudo apt -f install -y && \
+#      sudo dpkg -i vivaldi-stable_1.11.917.39-1_amd64.deb)
+#rm -f vivaldi-stable_1.11.917.39-1_amd64.deb
+
 
 
 ###################################################
