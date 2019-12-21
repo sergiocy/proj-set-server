@@ -96,6 +96,29 @@ sudo apt-get install texmaker # ...to get texmaker editor...
 #rm -f vivaldi-stable_1.11.917.39-1_amd64.deb
 
 
+#################################
+#### 6.- insync
+# repo_insync=????
+deb_pkg_insync="insync_3.0.25.40643-buster_amd64.deb"
+#### ..if we already have the .deb package, is enough with:
+#sudo dpkg -i $deb_pkg_insync
+
+#### ...add repo...
+sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys ACCAF35C
+#### ...if before not works use...
+#sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys ACCAF35C
+
+#### ...Create a file /etc/apt/sources.list.d/insync.list with the following content:
+#### deb http://apt.insync.io/debian buster non-free contrib
+sudo echo "deb http://apt.insync.io/debian buster non-free contrib" > /etc/apt/sources.list.d/insync.list
+#### ...problems with permission... maybe will need chmod before...
+
+#### ...update and installation...
+sudo apt-get update
+sudo apt-get install insync
+
+
+
 
 ###################################################
 DURATION=$SECONDS
