@@ -119,6 +119,11 @@ sudo apt-get install insync
 
 
 
+#######################################
+#### 7.- rclone
+curl https://rclone.org/install.sh | sudo bash
+
+
 
 ###################################################
 DURATION=$SECONDS
