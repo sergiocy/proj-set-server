@@ -73,9 +73,12 @@ repo_atom="https://packagecloud.io/AtomEditor/atom/gpgkey"
 deb_pkg_atom="atom.deb"
 
 #wget $repo_atom -O $deb_pkg_atom
-#sudo dpkg -i $deb_pkg_atom
 
-#wget -qO - $repo_atom | sudo apt-key add
+
+####...
+#wget -qO - $repo_atom | sudo apt-key add -
+sudo sh -c 'echo "deb [arch=amd64] https://packagecloud.io/AtomEditor/atom/any/ any main" > /etc/apt/sources.list.d/atom.list'
+#sudo dpkg -i $deb_pkg_atom
 
 
 
